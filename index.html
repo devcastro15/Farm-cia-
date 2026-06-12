@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="logo.PNG" />
+    <link rel="icon" type="image/png" href="images/logo.PNG" />
 
     <script>
         tailwind.config = {
@@ -178,6 +178,14 @@
             padding-bottom: 12px !important;
         }
 
+        /* Logo: garante que NUNCA tem fundo, em qualquer estado/página */
+        .brand-logo,
+        .brand-link,
+        .brand-link:hover,
+        .brand-link:focus {
+            background: transparent !important;
+        }
+
         /* Scrollbar */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #F7F8F6; }
@@ -330,9 +338,9 @@
     <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 pt-4">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="nav-pill flex items-center justify-between px-4 sm:px-5 py-2.5">
-                <a href="#home" class="flex items-center gap-2.5 group pl-1">
-                    <!-- Logo sem fundo (PNG transparente) e maior -->
-                    <img src="images/logo.PNG" alt="Saúde Real" class="w-14 h-14 object-contain group-hover:scale-105 transition-transform" />
+                <a href="#home" class="brand-link flex items-center gap-2.5 group pl-1">
+                    <!-- Logo transparente e maior (respeita a proporção horizontal do PNG) -->
+                    <img src="images/logo.PNG" alt="Saúde Real" class="brand-logo h-12 sm:h-14 w-auto object-contain group-hover:scale-105 transition-transform" />
                     <div class="hidden sm:block leading-tight">
                         <div class="text-[10px] text-brand-green font-semibold tracking-wider uppercase">Farmácia</div>
                         <div class="text-base font-display font-extrabold text-brand-ink leading-none">Saúde<span class="text-brand-green">Real</span></div>
@@ -340,11 +348,11 @@
                 </a>
 
                 <ul class="hidden lg:flex items-center gap-1">
-                    <li><a href="#home" class="px-4 py-2 text-sm font-semibold text-brand-ink hover:text-brand-green transition-colors rounded-full hover:bg-brand-greenLight">Início</a></li>
-                    <li><a href="#sobre" class="px-4 py-2 text-sm font-semibold text-brand-ink hover:text-brand-green transition-colors rounded-full hover:bg-brand-greenLight">Sobre</a></li>
-                    <li><a href="#servicos" class="px-4 py-2 text-sm font-semibold text-brand-ink hover:text-brand-green transition-colors rounded-full hover:bg-brand-greenLight">Serviços</a></li>
-                    <li><a href="#localizacao" class="px-4 py-2 text-sm font-semibold text-brand-ink hover:text-brand-green transition-colors rounded-full hover:bg-brand-greenLight">Localização</a></li>
-                    <li><a href="#contacto" class="px-4 py-2 text-sm font-semibold text-brand-ink hover:text-brand-green transition-colors rounded-full hover:bg-brand-greenLight">Contacto</a></li>
+                    <li><a href="#home" class="nav-link px-4 py-2 text-sm font-semibold text-brand-ink hover:text-brand-green transition-colors rounded-full hover:bg-brand-greenLight">Início</a></li>
+                    <li><a href="#sobre" class="nav-link px-4 py-2 text-sm font-semibold text-brand-ink hover:text-brand-green transition-colors rounded-full hover:bg-brand-greenLight">Sobre</a></li>
+                    <li><a href="#servicos" class="nav-link px-4 py-2 text-sm font-semibold text-brand-ink hover:text-brand-green transition-colors rounded-full hover:bg-brand-greenLight">Serviços</a></li>
+                    <li><a href="#localizacao" class="nav-link px-4 py-2 text-sm font-semibold text-brand-ink hover:text-brand-green transition-colors rounded-full hover:bg-brand-greenLight">Localização</a></li>
+                    <li><a href="#contacto" class="nav-link px-4 py-2 text-sm font-semibold text-brand-ink hover:text-brand-green transition-colors rounded-full hover:bg-brand-greenLight">Contacto</a></li>
                 </ul>
 
                 <a href="https://farmaceutika.ao" target="_blank" rel="noopener" class="hidden lg:inline-flex btn-lime px-5 py-2.5 rounded-full font-bold text-sm items-center gap-2">
@@ -716,8 +724,8 @@
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
                 <div>
                     <div class="flex items-center gap-3 mb-4">
-                        <!-- Logo sem fundo (PNG transparente) e maior -->
-                        <img src="images/logo.PNG" alt="Saúde Real" class="w-14 h-14 object-contain" />
+                        <!-- Logo transparente e maior -->
+                        <img src="images/logo.PNG" alt="Saúde Real" class="brand-logo h-14 w-auto object-contain" />
                         <div>
                             <div class="text-[10px] text-brand-lime font-semibold tracking-wider uppercase">Farmácia</div>
                             <div class="text-lg font-display font-extrabold text-white leading-none">Saúde<span class="text-brand-lime">Real</span></div>
@@ -827,8 +835,13 @@
         });
 
         // Active nav link highlight
+        // CORRIGIDO: antes o seletor era 'nav a[href^="#"]', que apanhava TAMBÉM
+        // o link do logo (<a href="#home">). Por isso, quando a secção ativa era
+        // "home" (topo da página), o script aplicava bg-brand-greenLight ao logo,
+        // criando o "fundo verdinho" — que desaparecia ao fazer scroll.
+        // Agora só os links do menu (.nav-link) recebem o destaque.
         const sections = document.querySelectorAll('section[id]');
-        const navLinks = document.querySelectorAll('nav a[href^="#"]');
+        const navLinks = document.querySelectorAll('.nav-link');
         window.addEventListener('scroll', () => {
             let current = '';
             sections.forEach(section => {
