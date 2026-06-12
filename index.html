@@ -7,13 +7,12 @@
     <title>Farmácia Saúde Real | Cuidamos da sua saúde</title>
 
     <!-- Tailwind CSS via CDN -->
-    <script src="https://cdn.tailwindcss.com">
-    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
@@ -27,19 +26,19 @@
                 extend: {
                     colors: {
                         brand: {
-                            navy: '#0a192f',
-                            deep: '#112240',
-                            blue: '#1d4ed8',
-                            accent: '#2563eb',
-                            teal: '#0f766e',
-                            tealLight: '#14b8a6',
-                            cyan: '#0891b2',
-                            emerald: '#047857',
+                            green: '#015B40',
+                            greenDark: '#004732',
+                            greenDeep: '#003526',
+                            greenLight: '#E8F5EE',
+                            lime: '#D1FF3B',
+                            limeHover: '#BFEE26',
+                            ink: '#0E1B17',
+                            mute: '#5E6B66',
                         }
                     },
                     fontFamily: {
-                        sans: ['Inter', 'system-ui', 'sans-serif'],
-                        display: ['Poppins', 'system-ui', 'sans-serif'],
+                        sans: ['Plus Jakarta Sans', 'Inter', 'system-ui', 'sans-serif'],
+                        display: ['Plus Jakarta Sans', 'Inter', 'system-ui', 'sans-serif'],
                     },
                     animation: {
                         'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
@@ -58,7 +57,7 @@
                         },
                         float: {
                             '0%, 100%': { transform: 'translateY(0px)' },
-                            '50%': { transform: 'translateY(-15px)' },
+                            '50%': { transform: 'translateY(-12px)' },
                         },
                     },
                 },
@@ -67,103 +66,127 @@
     </script>
 
     <style>
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0a192f;
-            color: #e6edf7;
+            font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+            background-color: #F7F8F6;
+            color: #0E1B17;
             overflow-x: hidden;
         }
 
+        /* === HERO === */
         .hero-bg {
-            background:
-                radial-gradient(ellipse at 20% 30%, rgba(20, 184, 166, 0.08) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 70%, rgba(8, 145, 178, 0.15) 0%, transparent 50%),
-                radial-gradient(ellipse at 50% 50%, rgba(17, 34, 64, 0.5) 0%, transparent 70%),
-                linear-gradient(135deg, #051024 0%, #0a192f 50%, #112240 100%);
-        }
-
-        .grid-overlay {
+            background: #015B40;
             background-image:
-                linear-gradient(rgba(8, 145, 178, 0.06) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(8, 145, 178, 0.06) 1px, transparent 1px);
-            background-size: 50px 50px;
+                radial-gradient(ellipse at 90% 10%, rgba(209, 255, 59, 0.10) 0%, transparent 45%),
+                radial-gradient(ellipse at 10% 90%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+                linear-gradient(160deg, #015B40 0%, #014A35 60%, #003526 100%);
         }
 
-        .glow-teal {
-            box-shadow: 0 0 40px rgba(20, 184, 166, 0.3), 0 0 80px rgba(20, 184, 166, 0.12);
-        }
-        .glow-cyan {
-            box-shadow: 0 0 40px rgba(8, 145, 178, 0.3), 0 0 80px rgba(8, 145, 178, 0.12);
-        }
-
-        .glass {
-            background: rgba(17, 34, 64, 0.45);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.07);
-        }
-        .glass-strong {
-            background: rgba(10, 25, 47, 0.85);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        /* Marca de água "PHARMACY" no fundo */
+        .watermark {
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 800;
+            font-size: clamp(80px, 18vw, 240px);
+            color: rgba(255, 255, 255, 0.04);
+            letter-spacing: -0.02em;
+            white-space: nowrap;
+            pointer-events: none;
+            z-index: 0;
+            line-height: 0.9;
         }
 
-        .gradient-text {
-            background: linear-gradient(135deg, #14b8a6 0%, #0891b2 100%);
+        /* === BOTÕES === */
+        .btn-lime {
+            background: #D1FF3B;
+            color: #0E1B17;
+            transition: all 0.25s ease;
+        }
+        .btn-lime:hover {
+            background: #BFEE26;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(209, 255, 59, 0.35);
+        }
+        .btn-ghost {
+            background: transparent;
+            color: #fff;
+            border: 1.5px solid rgba(255, 255, 255, 0.4);
+            transition: all 0.25s ease;
+        }
+        .btn-ghost:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.7);
+        }
+        .btn-green {
+            background: #015B40;
+            color: #fff;
+            transition: all 0.25s ease;
+        }
+        .btn-green:hover {
+            background: #014A35;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(1, 91, 64, 0.25);
+        }
+
+        /* === CARDS === */
+        .card-white {
+            background: #fff;
+            border: 1px solid #EAEDE9;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-white:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(1, 91, 64, 0.10);
+            border-color: rgba(1, 91, 64, 0.18);
+        }
+
+        .icon-chip {
+            background: #E8F5EE;
+            color: #015B40;
+        }
+        .icon-chip-lime {
+            background: #D1FF3B;
+            color: #0E1B17;
+        }
+
+        /* Texto destacado */
+        .text-gradient-lime {
+            background: linear-gradient(135deg, #D1FF3B 0%, #A8E815 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .text-gradient-green {
+            background: linear-gradient(135deg, #015B40 0%, #048A60 100%);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .btn-primary {
-            background: linear-gradient(135deg, #0f766e 0%, #0e7490 100%);
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 20px rgba(15, 118, 110, 0.35);
+        /* === NAV === */
+        .nav-pill {
+            background: #fff;
+            border-radius: 999px;
+            box-shadow: 0 10px 30px rgba(1, 91, 64, 0.12);
         }
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(15, 118, 110, 0.55);
-        }
-
-        .card-hover {
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .card-hover:hover {
-            transform: translateY(-8px);
-            border-color: rgba(20, 184, 166, 0.3);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35), 0 0 25px rgba(20, 184, 166, 0.08);
+        .nav-scrolled-wrapper {
+            padding-top: 12px !important;
+            padding-bottom: 12px !important;
         }
 
-        .shape {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(60px);
-            opacity: 0.3;
-            z-index: 0;
-        }
-
-        .nav-scrolled {
-            background: rgba(10, 25, 47, 0.95) !important;
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #0a192f;
-        }
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #F7F8F6; }
         ::-webkit-scrollbar-thumb {
-            background: linear-gradient(135deg, #0f766e, #0891b2);
+            background: #015B40;
             border-radius: 10px;
         }
 
+        /* Reveal animation */
         .reveal {
             opacity: 0;
             transform: translateY(30px);
@@ -174,29 +197,23 @@
             transform: translateY(0);
         }
 
-        .pulse-dot {
-            position: relative;
-        }
+        /* Pulse dot */
+        .pulse-dot { position: relative; }
         .pulse-dot::before {
             content: '';
             position: absolute;
             inset: -4px;
             border-radius: 50%;
-            background: #14b8a6;
+            background: #D1FF3B;
             opacity: 0.5;
             animation: pulseDot 2s ease-out infinite;
         }
         @keyframes pulseDot {
-            0% {
-                transform: scale(1);
-                opacity: 0.5;
-            }
-            100% {
-                transform: scale(2.5);
-                opacity: 0;
-            }
+            0% { transform: scale(1); opacity: 0.5; }
+            100% { transform: scale(2.5); opacity: 0; }
         }
 
+        /* Mobile menu */
         .mobile-menu {
             transition: transform 0.4s ease, opacity 0.4s ease;
         }
@@ -206,120 +223,220 @@
             pointer-events: none;
         }
 
+        /* Hero image disc */
+        .hero-disc {
+            position: relative;
+            width: 100%;
+            max-width: 520px;
+            aspect-ratio: 1 / 1;
+        }
+        .hero-disc::before {
+            content: '';
+            position: absolute;
+            inset: 8%;
+            border-radius: 50%;
+            background: radial-gradient(circle at 50% 40%, rgba(209, 255, 59, 0.18) 0%, rgba(209, 255, 59, 0) 60%);
+        }
+        .hero-disc::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            border: 1.5px dashed rgba(255, 255, 255, 0.15);
+        }
+
+        /* Floating product mini-card */
+        .float-card {
+            position: absolute;
+            background: #fff;
+            border-radius: 18px;
+            padding: 12px 14px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 5;
+        }
+
+        /* Rating avatars */
+        .avatar-stack img {
+            border: 2.5px solid #015B40;
+        }
+
+        /* Divider */
         .divider {
             height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(20, 184, 166, 0.5), rgba(8, 145, 178, 0.5), transparent);
+            background: linear-gradient(90deg, transparent, #015B40, transparent);
+            opacity: 0.18;
         }
+
+        /* Section dark */
+        .section-dark {
+            background: #015B40;
+            color: #fff;
+        }
+        .section-dark .grid-overlay {
+            background-image:
+                linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+
+        /* Map filter (light-friendly) */
+        .map-wrapper iframe { filter: grayscale(0.15) contrast(0.95); }
+
+        /* Form inputs */
+        .input-field {
+            background: #fff;
+            border: 1.5px solid #EAEDE9;
+            color: #0E1B17;
+            transition: all 0.2s;
+        }
+        .input-field:focus {
+            border-color: #015B40;
+            box-shadow: 0 0 0 4px rgba(1, 91, 64, 0.08);
+        }
+        .input-field::placeholder { color: #9AA39E; }
     </style>
 </head>
-<body class="antialiased">
+<body class="antialiased bg-[#F7F8F6]">
 
     <!-- ============== NAVEGAÇÃO ============== -->
-    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 pt-4">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <a href="#home" class="flex items-center gap-3 group">
-                    <!-- bg-white removido, substituído por bg-transparent -->
-                    <div class="w-11 h-11 rounded-xl bg-transparent p-1 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+            <div class="nav-pill flex items-center justify-between px-4 sm:px-5 py-2.5">
+                <a href="#home" class="flex items-center gap-2.5 group pl-1">
+                    <div class="w-10 h-10 rounded-full bg-brand-greenLight p-1 flex items-center justify-center group-hover:scale-105 transition-transform">
                         <img src="B571A0C1-6068-461A-9EF2-8500AA607F3F.png" alt="Saúde Real" class="w-full h-full object-contain" />
                     </div>
-                    <div class="hidden sm:block">
-                        <div class="text-xs text-brand-tealLight font-medium tracking-wider uppercase">Farmácia</div>
-                        <div class="text-lg font-display font-bold text-white leading-none">Saúde<span class="text-brand-cyan">Real</span></div>
+                    <div class="hidden sm:block leading-tight">
+                        <div class="text-[10px] text-brand-green font-semibold tracking-wider uppercase">Farmácia</div>
+                        <div class="text-base font-display font-extrabold text-brand-ink leading-none">Saúde<span class="text-brand-green">Real</span></div>
                     </div>
                 </a>
 
                 <ul class="hidden lg:flex items-center gap-1">
-                    <li><a href="#home" class="px-4 py-2 text-sm font-medium text-gray-200 hover:text-brand-tealLight transition-colors rounded-lg hover:bg-white/5">Início</a></li>
-                    <li><a href="#sobre" class="px-4 py-2 text-sm font-medium text-gray-200 hover:text-brand-tealLight transition-colors rounded-lg hover:bg-white/5">Sobre</a></li>
-                    <li><a href="#servicos" class="px-4 py-2 text-sm font-medium text-gray-200 hover:text-brand-tealLight transition-colors rounded-lg hover:bg-white/5">Serviços</a></li>
-                    <li><a href="#localizacao" class="px-4 py-2 text-sm font-medium text-gray-200 hover:text-brand-tealLight transition-colors rounded-lg hover:bg-white/5">Localização</a></li>
-                    <li><a href="#contacto" class="px-4 py-2 text-sm font-medium text-gray-200 hover:text-brand-tealLight transition-colors rounded-lg hover:bg-white/5">Contacto</a></li>
+                    <li><a href="#home" class="px-4 py-2 text-sm font-semibold text-brand-ink hover:text-brand-green transition-colors rounded-full hover:bg-brand-greenLight">Início</a></li>
+                    <li><a href="#sobre" class="px-4 py-2 text-sm font-semibold text-brand-ink hover:text-brand-green transition-colors rounded-full hover:bg-brand-greenLight">Sobre</a></li>
+                    <li><a href="#servicos" class="px-4 py-2 text-sm font-semibold text-brand-ink hover:text-brand-green transition-colors rounded-full hover:bg-brand-greenLight">Serviços</a></li>
+                    <li><a href="#localizacao" class="px-4 py-2 text-sm font-semibold text-brand-ink hover:text-brand-green transition-colors rounded-full hover:bg-brand-greenLight">Localização</a></li>
+                    <li><a href="#contacto" class="px-4 py-2 text-sm font-semibold text-brand-ink hover:text-brand-green transition-colors rounded-full hover:bg-brand-greenLight">Contacto</a></li>
                 </ul>
 
-                <a href="https://farmaceutika.ao" target="_blank" rel="noopener" class="hidden lg:inline-flex btn-primary text-white px-5 py-2.5 rounded-lg font-semibold text-sm items-center gap-2">
-                    <i class="fas fa-shopping-bag"></i> Encomendar Online
+                <a href="https://farmaceutika.ao" target="_blank" rel="noopener" class="hidden lg:inline-flex btn-lime px-5 py-2.5 rounded-full font-bold text-sm items-center gap-2">
+                    <i class="fas fa-shopping-bag"></i> Encomendar
                 </a>
 
-                <button id="menuBtn" class="lg:hidden text-white w-10 h-10 flex items-center justify-center rounded-lg hover:bg-white/10" aria-label="Abrir menu">
+                <button id="menuBtn" class="lg:hidden text-brand-ink w-10 h-10 flex items-center justify-center rounded-full hover:bg-brand-greenLight" aria-label="Abrir menu">
                     <i class="fas fa-bars text-xl"></i>
                 </button>
             </div>
         </div>
 
         <!-- Mobile menu -->
-        <div id="mobileMenu" class="mobile-menu hidden-menu lg:hidden fixed top-0 right-0 h-screen w-80 max-w-full glass-strong p-8 z-50">
+        <div id="mobileMenu" class="mobile-menu hidden-menu lg:hidden fixed top-0 right-0 h-screen w-80 max-w-full bg-white p-8 z-50 shadow-2xl">
             <div class="flex justify-end mb-8">
-                <button id="closeBtn" class="text-white w-10 h-10 flex items-center justify-center rounded-lg hover:bg-white/10" aria-label="Fechar menu">
+                <button id="closeBtn" class="text-brand-ink w-10 h-10 flex items-center justify-center rounded-full hover:bg-brand-greenLight" aria-label="Fechar menu">
                     <i class="fas fa-times text-2xl"></i>
                 </button>
             </div>
             <ul class="space-y-2">
-                <li><a href="#home" class="mobile-link block px-4 py-3 text-gray-200 hover:text-brand-tealLight hover:bg-white/5 rounded-lg transition">Início</a></li>
-                <li><a href="#sobre" class="mobile-link block px-4 py-3 text-gray-200 hover:text-brand-tealLight hover:bg-white/5 rounded-lg transition">Sobre</a></li>
-                <li><a href="#servicos" class="mobile-link block px-4 py-3 text-gray-200 hover:text-brand-tealLight hover:bg-white/5 rounded-lg transition">Serviços</a></li>
-                <li><a href="#localizacao" class="mobile-link block px-4 py-3 text-gray-200 hover:text-brand-tealLight hover:bg-white/5 rounded-lg transition">Localização</a></li>
-                <li><a href="#contacto" class="mobile-link block px-4 py-3 text-gray-200 hover:text-brand-tealLight hover:bg-white/5 rounded-lg transition">Contacto</a></li>
+                <li><a href="#home" class="mobile-link block px-4 py-3 text-brand-ink font-semibold hover:text-brand-green hover:bg-brand-greenLight rounded-xl transition">Início</a></li>
+                <li><a href="#sobre" class="mobile-link block px-4 py-3 text-brand-ink font-semibold hover:text-brand-green hover:bg-brand-greenLight rounded-xl transition">Sobre</a></li>
+                <li><a href="#servicos" class="mobile-link block px-4 py-3 text-brand-ink font-semibold hover:text-brand-green hover:bg-brand-greenLight rounded-xl transition">Serviços</a></li>
+                <li><a href="#localizacao" class="mobile-link block px-4 py-3 text-brand-ink font-semibold hover:text-brand-green hover:bg-brand-greenLight rounded-xl transition">Localização</a></li>
+                <li><a href="#contacto" class="mobile-link block px-4 py-3 text-brand-ink font-semibold hover:text-brand-green hover:bg-brand-greenLight rounded-xl transition">Contacto</a></li>
             </ul>
-            <a href="https://farmaceutika.ao" target="_blank" rel="noopener" class="btn-primary mt-8 text-white px-5 py-3 rounded-lg font-semibold text-sm flex items-center justify-center gap-2">
+            <a href="https://farmaceutika.ao" target="_blank" rel="noopener" class="btn-lime mt-8 px-5 py-3 rounded-full font-bold text-sm flex items-center justify-center gap-2">
                 <i class="fas fa-shopping-bag"></i> Encomendar Online
             </a>
-            <div class="mt-8 pt-8 border-t border-white/10">
-                <p class="text-xs text-gray-400 uppercase tracking-wider mb-3">Contacto rápido</p>
-                <a href="tel:+244921660561" class="flex items-center gap-3 text-gray-300 hover:text-brand-tealLight mb-3">
-                    <i class="fas fa-phone text-brand-tealLight"></i> +244 921 660 561
+            <div class="mt-8 pt-8 border-t border-gray-200">
+                <p class="text-xs text-brand-mute uppercase tracking-wider mb-3 font-semibold">Contacto rápido</p>
+                <a href="tel:+244921660561" class="flex items-center gap-3 text-brand-ink hover:text-brand-green mb-3 text-sm font-medium">
+                    <i class="fas fa-phone text-brand-green"></i> +244 921 660 561
                 </a>
-                <a href="mailto:geral@saudereal.ao" class="flex items-center gap-3 text-gray-300 hover:text-brand-tealLight">
-                    <i class="fas fa-envelope text-brand-tealLight"></i> geral@saudereal.ao
+                <a href="mailto:geral@saudereal.ao" class="flex items-center gap-3 text-brand-ink hover:text-brand-green text-sm font-medium">
+                    <i class="fas fa-envelope text-brand-green"></i> geral@saudereal.ao
                 </a>
             </div>
         </div>
     </nav>
 
     <!-- ============== HERO ============== -->
-    <section id="home" class="relative min-h-screen hero-bg overflow-hidden flex items-center pt-24 pb-16">
-        <div class="absolute inset-0 grid-overlay opacity-50"></div>
-        <div class="shape bg-brand-tealLight" style="width: 350px; height: 350px; top: -80px; left: -80px;"></div>
-        <div class="shape bg-brand-cyan" style="width: 400px; height: 400px; bottom: -120px; right: -120px; animation-delay: 2s;"></div>
+    <section id="home" class="relative min-h-screen hero-bg overflow-hidden flex items-center pt-32 pb-20 rounded-b-[40px] sm:rounded-b-[60px]">
+        <div class="watermark">PHARMACY</div>
 
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div class="grid lg:grid-cols-2 gap-10 lg:gap-8 items-center">
+                <!-- Texto -->
                 <div class="text-center lg:text-left">
-                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-6 animate-fade-in">
-                        <span class="pulse-dot w-2 h-2 bg-brand-tealLight rounded-full"></span>
-                        <span class="text-sm text-gray-200 font-medium">Vila de Cacuaco, Luanda</span>
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/15 backdrop-blur-sm mb-6 animate-fade-in">
+                        <span class="pulse-dot w-2 h-2 bg-brand-lime rounded-full"></span>
+                        <span class="text-xs sm:text-sm text-white font-medium">Vila de Cacuaco, Luanda</span>
                     </div>
 
-                    <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6 animate-fade-in-up">
-                        A sua saúde,<br />a nossa <span class="gradient-text">prioridade</span>.
+                    <h1 class="font-display text-4xl sm:text-5xl lg:text-[64px] font-extrabold text-white leading-[1.05] tracking-tight mb-6 animate-fade-in-up">
+                        A sua saúde,<br />
+                        a nossa <span class="text-gradient-lime">prioridade</span>.
                     </h1>
 
-                    <p class="text-lg sm:text-xl text-gray-300 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed animate-fade-in-up" style="animation-delay: 0.2s;">
+                    <p class="text-base sm:text-lg text-white/75 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed animate-fade-in-up" style="animation-delay: 0.2s;">
                         Medicamentos, aconselhamento farmacêutico e cuidados de saúde com a confiança que a sua família merece.
                     </p>
 
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in-up" style="animation-delay: 0.4s;">
-                        <a href="https://farmaceutika.ao" target="_blank" rel="noopener" class="btn-primary text-white px-8 py-4 rounded-xl font-semibold inline-flex items-center justify-center gap-2 text-base">
+                    <div class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start animate-fade-in-up mb-10" style="animation-delay: 0.4s;">
+                        <a href="https://farmaceutika.ao" target="_blank" rel="noopener" class="btn-lime px-7 py-3.5 rounded-full font-bold inline-flex items-center justify-center gap-2 text-sm">
                             <i class="fas fa-shopping-bag"></i> Encomendar Online
-                            <i class="fas fa-arrow-right text-sm"></i>
                         </a>
-                        <a href="#contacto" class="glass text-white px-8 py-4 rounded-xl font-semibold inline-flex items-center justify-center gap-2 text-base hover:bg-white/10 transition">
-                            <i class="fas fa-phone"></i> Contactar
+                        <a href="#contacto" class="btn-ghost px-7 py-3.5 rounded-full font-bold inline-flex items-center justify-center gap-2 text-sm">
+                            Explorar Mais <i class="fas fa-arrow-right text-xs"></i>
                         </a>
+                    </div>
+
+                    <!-- Rating / Trust -->
+                    <div class="flex items-center justify-center lg:justify-start gap-4 animate-fade-in-up" style="animation-delay: 0.55s;">
+                        <div class="avatar-stack flex -space-x-3">
+                            <img src="https://i.pravatar.cc/80?img=47" class="w-10 h-10 rounded-full object-cover" alt="" />
+                            <img src="https://i.pravatar.cc/80?img=32" class="w-10 h-10 rounded-full object-cover" alt="" />
+                            <img src="https://i.pravatar.cc/80?img=12" class="w-10 h-10 rounded-full object-cover" alt="" />
+                        </div>
+                        <div class="text-left">
+                            <div class="flex items-center gap-1.5 text-white font-bold text-sm">
+                                <i class="fas fa-star text-brand-lime"></i> 4.9/5
+                            </div>
+                            <div class="text-white/65 text-xs">Confiado por 2.400+ famílias</div>
+                        </div>
                     </div>
                 </div>
 
+                <!-- Imagem -->
                 <div class="relative flex justify-center lg:justify-end animate-fade-in" style="animation-delay: 0.3s;">
-                    <div class="relative">
-                        <div class="absolute inset-0 rounded-full border border-brand-tealLight/20 animate-pulse-slow" style="transform: scale(1.3);"></div>
-                        <div class="absolute inset-0 rounded-full border border-brand-cyan/20 animate-pulse-slow" style="transform: scale(1.5); animation-delay: 1s;"></div>
-                        <div class="relative glass rounded-3xl p-8 sm:p-10 glow-teal animate-float">
-                            <!-- bg-white substituído por bg-transparent -->
-                            <div class="rounded-2xl p-6 shadow-2xl bg-transparent">
-                                <img src="B571A0C1-6068-461A-9EF2-8500AA607F3F.png" alt="Farmácia Saúde Real" class="w-full h-auto max-w-xs mx-auto" />
+                    <div class="hero-disc">
+                        <img src="175 Sem Título_20260612020405.png" alt="Farmacêutica Saúde Real"
+                             class="relative z-10 w-full h-full object-contain animate-float drop-shadow-2xl" />
+
+                        <!-- Floating card 1: Produto -->
+                        <div class="float-card animate-fade-in-up" style="right: 0; bottom: 8%; animation-delay: 0.9s;">
+                            <div class="w-12 h-12 rounded-xl bg-brand-greenLight flex items-center justify-center">
+                                <i class="fas fa-prescription-bottle-medical text-brand-green text-lg"></i>
                             </div>
-                            <div class="absolute -top-3 -right-3 bg-brand-teal text-white px-3 py-1.5 rounded-full text-xs font-bold shadow-lg flex items-center gap-1.5">
-                                <i class="fas fa-check-circle"></i> Certificada
+                            <div class="pr-1">
+                                <div class="text-[10px] text-brand-mute font-medium leading-tight">Produto destaque</div>
+                                <div class="text-xs font-bold text-brand-ink leading-tight">Vitaminas &amp; Suplementos</div>
+                            </div>
+                            <div class="w-8 h-8 rounded-full btn-lime flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-arrow-up-right-from-square text-[10px]"></i>
+                            </div>
+                        </div>
+
+                        <!-- Floating card 2: Certificada -->
+                        <div class="float-card animate-fade-in-up" style="left: 0; top: 12%; padding: 8px 14px 8px 8px; animation-delay: 1.1s;">
+                            <div class="w-9 h-9 rounded-full bg-brand-green flex items-center justify-center">
+                                <i class="fas fa-check text-white text-xs"></i>
+                            </div>
+                            <div>
+                                <div class="text-[10px] text-brand-mute font-medium leading-tight">Farmácia</div>
+                                <div class="text-xs font-bold text-brand-ink leading-tight">100% Certificada</div>
                             </div>
                         </div>
                     </div>
@@ -327,55 +444,52 @@
             </div>
         </div>
 
-        <a href="#sobre" class="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/60 hover:text-white animate-bounce">
-            <i class="fas fa-chevron-down text-2xl"></i>
+        <a href="#sobre" class="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/50 hover:text-white animate-bounce z-10">
+            <i class="fas fa-chevron-down text-xl"></i>
         </a>
     </section>
 
     <!-- ============== SOBRE ============== -->
-    <section id="sobre" class="relative py-20 bg-brand-navy overflow-hidden">
-        <div class="absolute inset-0 grid-overlay opacity-30"></div>
-        <div class="shape bg-brand-tealLight" style="width: 250px; height: 250px; top: 15%; right: -80px;"></div>
-
+    <section id="sobre" class="relative py-20 sm:py-24 bg-[#F7F8F6] overflow-hidden">
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <div class="reveal">
-                    <span class="text-brand-tealLight font-semibold text-sm uppercase tracking-widest">Sobre Nós</span>
-                    <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mt-3 mb-5 leading-tight">
-                        Mais do que uma farmácia, um <span class="gradient-text">parceiro de saúde</span>.
+                    <span class="inline-block text-brand-green font-bold text-xs uppercase tracking-[0.2em] px-3 py-1 rounded-full bg-brand-greenLight">Sobre Nós</span>
+                    <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold text-brand-ink mt-4 mb-5 leading-[1.1] tracking-tight">
+                        Mais do que uma farmácia, um <span class="text-gradient-green">parceiro de saúde</span>.
                     </h2>
                     <div class="divider mb-5"></div>
-                    <p class="text-gray-300 leading-relaxed">
-                        A <strong class="text-white">Farmácia Saúde Real</strong> nasceu para oferecer aos angolanos acesso fácil, seguro e profissional a medicamentos de alta qualidade. Localizada na Vila de Cacuaco, combinamos atendimento humanizado com produtos 100% certificados.
+                    <p class="text-brand-mute text-base sm:text-lg leading-relaxed">
+                        A <strong class="text-brand-ink">Farmácia Saúde Real</strong> nasceu para oferecer aos angolanos acesso fácil, seguro e profissional a medicamentos de alta qualidade. Localizada na Vila de Cacuaco, combinamos atendimento humanizado com produtos 100% certificados.
                     </p>
                 </div>
 
                 <div class="grid gap-4 reveal">
-                    <div class="glass rounded-2xl p-5 card-hover flex items-start gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-brand-teal to-brand-tealLight flex items-center justify-center flex-shrink-0 glow-teal">
-                            <i class="fas fa-user-md text-white"></i>
+                    <div class="card-white rounded-2xl p-5 flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl icon-chip flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-user-md text-lg"></i>
                         </div>
                         <div>
-                            <h4 class="text-white font-semibold">Equipa Qualificada</h4>
-                            <p class="text-sm text-gray-400">Farmacêuticos licenciados e experientes</p>
+                            <h4 class="text-brand-ink font-bold mb-0.5">Equipa Qualificada</h4>
+                            <p class="text-sm text-brand-mute">Farmacêuticos licenciados e experientes</p>
                         </div>
                     </div>
-                    <div class="glass rounded-2xl p-5 card-hover flex items-start gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-brand-cyan to-brand-blue flex items-center justify-center flex-shrink-0 glow-cyan">
-                            <i class="fas fa-pills text-white"></i>
+                    <div class="card-white rounded-2xl p-5 flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl icon-chip-lime flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-pills text-lg"></i>
                         </div>
                         <div>
-                            <h4 class="text-white font-semibold">Produtos Originais</h4>
-                            <p class="text-sm text-gray-400">100% certificados e de confiança</p>
+                            <h4 class="text-brand-ink font-bold mb-0.5">Produtos Originais</h4>
+                            <p class="text-sm text-brand-mute">100% certificados e de confiança</p>
                         </div>
                     </div>
-                    <div class="glass rounded-2xl p-5 card-hover flex items-start gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-brand-teal to-brand-cyan flex items-center justify-center flex-shrink-0">
-                            <i class="fas fa-heart-pulse text-white"></i>
+                    <div class="card-white rounded-2xl p-5 flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl icon-chip flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-heart-pulse text-lg"></i>
                         </div>
                         <div>
-                            <h4 class="text-white font-semibold">Atendimento Personalizado</h4>
-                            <p class="text-sm text-gray-400">Cuidado humano e atento a cada cliente</p>
+                            <h4 class="text-brand-ink font-bold mb-0.5">Atendimento Personalizado</h4>
+                            <p class="text-sm text-brand-mute">Cuidado humano e atento a cada cliente</p>
                         </div>
                     </div>
                 </div>
@@ -384,92 +498,87 @@
     </section>
 
     <!-- ============== SERVIÇOS ============== -->
-    <section id="servicos" class="relative py-20 bg-gradient-to-b from-brand-navy to-brand-deep overflow-hidden">
-        <div class="absolute inset-0 grid-overlay opacity-30"></div>
-        <div class="shape bg-brand-cyan" style="width: 300px; height: 300px; top: -80px; left: -80px;"></div>
-
+    <section id="servicos" class="relative py-20 sm:py-24 bg-white overflow-hidden">
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-14 reveal">
-                <span class="text-brand-tealLight font-semibold text-sm uppercase tracking-widest">Serviços</span>
-                <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mt-3 mb-3">
-                    Cuidamos de <span class="gradient-text">toda a família</span>
+                <span class="inline-block text-brand-green font-bold text-xs uppercase tracking-[0.2em] px-3 py-1 rounded-full bg-brand-greenLight">Serviços</span>
+                <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold text-brand-ink mt-4 mb-3 leading-[1.1] tracking-tight">
+                    Cuidamos de <span class="text-gradient-green">toda a família</span>
                 </h2>
             </div>
 
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-                <div class="glass rounded-2xl p-7 card-hover reveal text-center">
-                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-teal to-brand-tealLight flex items-center justify-center mb-4 mx-auto glow-teal">
-                        <i class="fas fa-prescription-bottle-medical text-white text-xl"></i>
+                <div class="card-white rounded-3xl p-7 reveal">
+                    <div class="w-14 h-14 rounded-2xl icon-chip flex items-center justify-center mb-5">
+                        <i class="fas fa-prescription-bottle-medical text-xl"></i>
                     </div>
-                    <h3 class="font-display text-lg font-bold text-white mb-2">Medicamentos</h3>
-                    <p class="text-gray-400 text-sm">Ampla variedade de medicamentos originais e certificados.</p>
+                    <h3 class="font-display text-lg font-bold text-brand-ink mb-2">Medicamentos</h3>
+                    <p class="text-brand-mute text-sm leading-relaxed">Ampla variedade de medicamentos originais e certificados.</p>
                 </div>
 
-                <div class="glass rounded-2xl p-7 card-hover reveal text-center">
-                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-cyan to-brand-blue flex items-center justify-center mb-4 mx-auto glow-cyan">
-                        <i class="fas fa-stethoscope text-white text-xl"></i>
+                <div class="card-white rounded-3xl p-7 reveal">
+                    <div class="w-14 h-14 rounded-2xl icon-chip-lime flex items-center justify-center mb-5">
+                        <i class="fas fa-stethoscope text-xl"></i>
                     </div>
-                    <h3 class="font-display text-lg font-bold text-white mb-2">Aconselhamento</h3>
-                    <p class="text-gray-400 text-sm">Orientação farmacêutica personalizada e profissional.</p>
+                    <h3 class="font-display text-lg font-bold text-brand-ink mb-2">Aconselhamento</h3>
+                    <p class="text-brand-mute text-sm leading-relaxed">Orientação farmacêutica personalizada e profissional.</p>
                 </div>
 
-                <div class="glass rounded-2xl p-7 card-hover reveal text-center">
-                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-teal to-brand-cyan flex items-center justify-center mb-4 mx-auto">
-                        <i class="fas fa-heart-pulse text-white text-xl"></i>
+                <div class="card-white rounded-3xl p-7 reveal">
+                    <div class="w-14 h-14 rounded-2xl icon-chip flex items-center justify-center mb-5">
+                        <i class="fas fa-heart-pulse text-xl"></i>
                     </div>
-                    <h3 class="font-display text-lg font-bold text-white mb-2">Medição de Tensão</h3>
-                    <p class="text-gray-400 text-sm">Medição gratuita da tensão arterial e controlo da hipertensão.</p>
+                    <h3 class="font-display text-lg font-bold text-brand-ink mb-2">Medição de Tensão</h3>
+                    <p class="text-brand-mute text-sm leading-relaxed">Medição gratuita da tensão arterial e controlo da hipertensão.</p>
                 </div>
 
-                <div class="glass rounded-2xl p-7 card-hover reveal text-center">
-                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-cyan to-brand-teal flex items-center justify-center mb-4 mx-auto">
-                        <i class="fas fa-droplet text-white text-xl"></i>
+                <div class="card-white rounded-3xl p-7 reveal">
+                    <div class="w-14 h-14 rounded-2xl icon-chip flex items-center justify-center mb-5">
+                        <i class="fas fa-droplet text-xl"></i>
                     </div>
-                    <h3 class="font-display text-lg font-bold text-white mb-2">Glicemia</h3>
-                    <p class="text-gray-400 text-sm">Avaliação dos níveis de glicose e acompanhamento da diabetes.</p>
+                    <h3 class="font-display text-lg font-bold text-brand-ink mb-2">Glicemia</h3>
+                    <p class="text-brand-mute text-sm leading-relaxed">Avaliação dos níveis de glicose e acompanhamento da diabetes.</p>
                 </div>
 
-                <div class="glass rounded-2xl p-7 card-hover reveal text-center">
-                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-teal to-brand-blue flex items-center justify-center mb-4 mx-auto">
-                        <i class="fas fa-baby text-white text-xl"></i>
+                <div class="card-white rounded-3xl p-7 reveal">
+                    <div class="w-14 h-14 rounded-2xl icon-chip-lime flex items-center justify-center mb-5">
+                        <i class="fas fa-baby text-xl"></i>
                     </div>
-                    <h3 class="font-display text-lg font-bold text-white mb-2">Produtos Infantis</h3>
-                    <p class="text-gray-400 text-sm">Fraldas, fórmulas, higiene e produtos dermatológicos para bebés.</p>
+                    <h3 class="font-display text-lg font-bold text-brand-ink mb-2">Produtos Infantis</h3>
+                    <p class="text-brand-mute text-sm leading-relaxed">Fraldas, fórmulas, higiene e produtos dermatológicos para bebés.</p>
                 </div>
 
-                <div class="glass rounded-2xl p-7 card-hover reveal text-center">
-                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-cyan to-brand-tealLight flex items-center justify-center mb-4 mx-auto">
-                        <i class="fas fa-spa text-white text-xl"></i>
+                <div class="card-white rounded-3xl p-7 reveal">
+                    <div class="w-14 h-14 rounded-2xl icon-chip flex items-center justify-center mb-5">
+                        <i class="fas fa-spa text-xl"></i>
                     </div>
-                    <h3 class="font-display text-lg font-bold text-white mb-2">Dermocosmética</h3>
-                    <p class="text-gray-400 text-sm">Produtos de beleza e cuidados pessoais das melhores marcas.</p>
+                    <h3 class="font-display text-lg font-bold text-brand-ink mb-2">Dermocosmética</h3>
+                    <p class="text-brand-mute text-sm leading-relaxed">Produtos de beleza e cuidados pessoais das melhores marcas.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ============== FARMACEUTIKA CTA ============== -->
-    <section class="relative py-20 bg-brand-deep overflow-hidden">
-        <div class="absolute inset-0 grid-overlay opacity-40"></div>
-        <div class="shape bg-brand-tealLight" style="width: 350px; height: 350px; bottom: -150px; left: 25%;"></div>
-
-        <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="glass-strong rounded-3xl p-8 sm:p-12 reveal relative overflow-hidden text-center">
-                <div class="absolute top-0 right-0 w-72 h-72 bg-brand-teal/10 rounded-full blur-3xl"></div>
-                <div class="absolute bottom-0 left-0 w-72 h-72 bg-brand-cyan/10 rounded-full blur-3xl"></div>
+    <section class="relative py-20 sm:py-24 bg-[#F7F8F6] overflow-hidden">
+        <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="section-dark rounded-[32px] p-8 sm:p-14 reveal relative overflow-hidden text-center">
+                <div class="absolute inset-0 grid-overlay opacity-60"></div>
+                <div class="absolute -top-20 -right-20 w-72 h-72 bg-brand-lime/15 rounded-full blur-3xl"></div>
+                <div class="absolute -bottom-24 -left-20 w-72 h-72 bg-white/5 rounded-full blur-3xl"></div>
 
                 <div class="relative">
-                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-teal/20 border border-brand-teal/30 mb-6">
-                        <i class="fas fa-bolt text-brand-tealLight"></i>
-                        <span class="text-sm text-brand-tealLight font-semibold">Parceiro Oficial</span>
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-lime/15 border border-brand-lime/40 mb-6">
+                        <i class="fas fa-bolt text-brand-lime"></i>
+                        <span class="text-sm text-brand-lime font-bold">Parceiro Oficial</span>
                     </div>
-                    <h3 class="font-display text-3xl sm:text-4xl font-bold text-white mb-4">
-                        Encomende na <span class="gradient-text">Farmaceutika</span>
+                    <h3 class="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-4 leading-tight tracking-tight">
+                        Encomende na <span class="text-gradient-lime">Farmaceutika</span>
                     </h3>
-                    <p class="text-gray-300 text-lg mb-8 max-w-xl mx-auto">
+                    <p class="text-white/75 text-base sm:text-lg mb-8 max-w-xl mx-auto leading-relaxed">
                         Aceda ao nosso perfil e tenha acesso a um catálogo completo com entrega rápida na sua zona.
                     </p>
-                    <a href="https://farmaceutika.ao" target="_blank" rel="noopener" class="btn-primary text-white px-10 py-4 rounded-xl font-semibold inline-flex items-center gap-2 text-base">
+                    <a href="https://farmaceutika.ao" target="_blank" rel="noopener" class="btn-lime px-8 py-4 rounded-full font-bold inline-flex items-center gap-2 text-sm">
                         <i class="fas fa-external-link-alt"></i> Visitar Farmaceutika
                     </a>
                 </div>
@@ -478,235 +587,233 @@
     </section>
 
     <!-- ============== LOCALIZAÇÃO ============== -->
-    <section id="localizacao" class="relative py-20 bg-brand-navy overflow-hidden">
-        <div class="absolute inset-0 grid-overlay opacity-30"></div>
-
+    <section id="localizacao" class="relative py-20 sm:py-24 bg-white overflow-hidden">
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 reveal">
-                <span class="text-brand-tealLight font-semibold text-sm uppercase tracking-widest">Onde Estamos</span>
-                <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mt-3 mb-3">
-                    Vila de <span class="gradient-text">Cacuaco</span>
+                <span class="inline-block text-brand-green font-bold text-xs uppercase tracking-[0.2em] px-3 py-1 rounded-full bg-brand-greenLight">Onde Estamos</span>
+                <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold text-brand-ink mt-4 mb-3 leading-[1.1] tracking-tight">
+                    Vila de <span class="text-gradient-green">Cacuaco</span>
                 </h2>
-                <p class="text-gray-300 max-w-xl mx-auto">Visite-nos pessoalmente. Estamos prontos para o receber.</p>
+                <p class="text-brand-mute max-w-xl mx-auto">Visite-nos pessoalmente. Estamos prontos para o receber.</p>
             </div>
 
-            <div class="grid lg:grid-cols-3 gap-5">
-                <div class="glass rounded-2xl p-6 card-hover reveal flex items-start gap-4">
-                    <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-brand-teal to-brand-tealLight flex items-center justify-center flex-shrink-0">
-                        <i class="fas fa-location-dot text-white"></i>
+            <div class="grid lg:grid-cols-3 gap-5 mb-6">
+                <div class="card-white rounded-2xl p-6 reveal flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-xl icon-chip flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-location-dot"></i>
                     </div>
                     <div>
-                        <h4 class="font-display font-bold text-white mb-1">Endereço</h4>
-                        <p class="text-gray-300 text-sm">Vila de Cacuaco<br />Luanda, Angola</p>
+                        <h4 class="font-display font-bold text-brand-ink mb-1">Endereço</h4>
+                        <p class="text-brand-mute text-sm">Vila de Cacuaco<br />Luanda, Angola</p>
                     </div>
                 </div>
 
-                <div class="glass rounded-2xl p-6 card-hover reveal flex items-start gap-4">
-                    <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-brand-cyan to-brand-blue flex items-center justify-center flex-shrink-0">
-                        <i class="fas fa-clock text-white"></i>
+                <div class="card-white rounded-2xl p-6 reveal flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-xl icon-chip-lime flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-clock"></i>
                     </div>
                     <div>
-                        <h4 class="font-display font-bold text-white mb-1">Horário</h4>
-                        <p class="text-gray-300 text-sm">Seg. - Sáb.: <span class="text-white font-medium">08h - 20h</span><br />Domingo: <span class="text-white font-medium">09h - 18h</span></p>
+                        <h4 class="font-display font-bold text-brand-ink mb-1">Horário</h4>
+                        <p class="text-brand-mute text-sm">Seg. - Sáb.: <span class="text-brand-ink font-semibold">08h - 20h</span><br />Domingo: <span class="text-brand-ink font-semibold">09h - 18h</span></p>
                     </div>
                 </div>
 
-                <div class="glass rounded-2xl p-6 card-hover reveal flex items-start gap-4">
-                    <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-brand-teal to-brand-cyan flex items-center justify-center flex-shrink-0">
-                        <i class="fas fa-phone text-white"></i>
+                <div class="card-white rounded-2xl p-6 reveal flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-xl icon-chip flex items-center justify-center flex-shrink-0">
+                        <i class="fas fa-phone"></i>
                     </div>
                     <div>
-                        <h4 class="font-display font-bold text-white mb-1">Contacto</h4>
-                        <a href="tel:+244921660561" class="text-gray-300 hover:text-brand-tealLight text-sm block">+244 921 660 561</a>
-                        <a href="mailto:geral@saudereal.ao" class="text-gray-300 hover:text-brand-tealLight text-sm block">geral@saudereal.ao</a>
+                        <h4 class="font-display font-bold text-brand-ink mb-1">Contacto</h4>
+                        <a href="tel:+244921660561" class="text-brand-mute hover:text-brand-green text-sm block">+244 921 660 561</a>
+                        <a href="mailto:geral@saudereal.ao" class="text-brand-mute hover:text-brand-green text-sm block">geral@saudereal.ao</a>
                     </div>
                 </div>
             </div>
 
-            <div class="mt-6 reveal">
-                <div class="glass rounded-2xl overflow-hidden h-72 sm:h-80">
+            <div class="reveal map-wrapper">
+                <div class="rounded-3xl overflow-hidden h-72 sm:h-96 border border-gray-200 shadow-lg">
                     <iframe
-                    src="https://www.google.com/maps?q=Vila+de+Cacuaco,+Luanda,+Angola&output=embed"
-                    class="w-full h-full border-0"
-                    style="filter: invert(0.92) hue-rotate(180deg) brightness(0.95) contrast(0.85);"
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"
-                title="Localização Farmácia Saúde Real"></iframe>
+                        src="https://www.google.com/maps?q=Vila+de+Cacuaco,+Luanda,+Angola&output=embed"
+                        class="w-full h-full border-0"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Localização Farmácia Saúde Real"></iframe>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- ============== CONTACTO ============== -->
-<section id="contacto" class="relative py-20 bg-gradient-to-b from-brand-navy to-brand-deep overflow-hidden">
-    <div class="absolute inset-0 grid-overlay opacity-30"></div>
-    <div class="shape bg-brand-cyan" style="width: 300px; height: 300px; top: 15%; right: -100px;"></div>
+    <!-- ============== CONTACTO ============== -->
+    <section id="contacto" class="relative py-20 sm:py-24 bg-[#F7F8F6] overflow-hidden">
+        <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 reveal">
+                <span class="inline-block text-brand-green font-bold text-xs uppercase tracking-[0.2em] px-3 py-1 rounded-full bg-brand-greenLight">Fale Connosco</span>
+                <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold text-brand-ink mt-4 mb-3 leading-[1.1] tracking-tight">
+                    Estamos aqui para <span class="text-gradient-green">si</span>
+                </h2>
+                <p class="text-brand-mute">Tem dúvidas ou precisa de aconselhamento? Entre em contacto.</p>
+            </div>
 
-    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12 reveal">
-            <span class="text-brand-tealLight font-semibold text-sm uppercase tracking-widest">Fale Connosco</span>
-            <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mt-3 mb-3">
-                Estamos aqui para <span class="gradient-text">si</span>
-            </h2>
-            <p class="text-gray-300">Tem dúvidas ou precisa de aconselhamento? Entre em contacto.</p>
+            <div class="bg-white rounded-3xl p-6 sm:p-10 reveal shadow-xl border border-gray-100">
+                <form id="contactForm" class="space-y-5">
+                    <div class="grid sm:grid-cols-2 gap-5">
+                        <div>
+                            <label for="name" class="block text-sm font-semibold text-brand-ink mb-2">Nome completo</label>
+                            <input type="text" id="name" name="name" required class="input-field w-full rounded-xl px-4 py-3 focus:outline-none" placeholder="O seu nome" />
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-sm font-semibold text-brand-ink mb-2">Telefone</label>
+                            <input type="tel" id="phone" name="phone" class="input-field w-full rounded-xl px-4 py-3 focus:outline-none" placeholder="+244 ..." />
+                        </div>
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-semibold text-brand-ink mb-2">E-mail</label>
+                        <input type="email" id="email" name="email" required class="input-field w-full rounded-xl px-4 py-3 focus:outline-none" placeholder="seu@email.com" />
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-semibold text-brand-ink mb-2">Mensagem</label>
+                        <textarea id="message" name="message" rows="4" required class="input-field w-full rounded-xl px-4 py-3 focus:outline-none resize-none" placeholder="A sua mensagem..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-green w-full px-8 py-4 rounded-full font-bold inline-flex items-center justify-center gap-2 text-sm">
+                        <i class="fas fa-paper-plane"></i> Enviar mensagem
+                    </button>
+                    <div id="formStatus" class="hidden text-center py-3 rounded-xl"></div>
+                </form>
+            </div>
         </div>
+    </section>
 
-        <div class="glass-strong rounded-2xl p-8 reveal">
-            <form id="contactForm" class="space-y-5">
-                <div class="grid sm:grid-cols-2 gap-5">
-                    <div>
-                        <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Nome completo</label>
-                        <input type="text" id="name" name="name" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-brand-tealLight transition" placeholder="O seu nome" />
+    <!-- ============== FOOTER ============== -->
+    <footer class="relative section-dark overflow-hidden rounded-t-[40px] sm:rounded-t-[60px]">
+        <div class="absolute inset-0 grid-overlay opacity-50"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-11 h-11 rounded-full bg-white p-1 flex items-center justify-center">
+                            <img src="B571A0C1-6068-461A-9EF2-8500AA607F3F.png" alt="Saúde Real" class="w-full h-full object-contain" />
+                        </div>
+                        <div>
+                            <div class="text-[10px] text-brand-lime font-semibold tracking-wider uppercase">Farmácia</div>
+                            <div class="text-lg font-display font-extrabold text-white leading-none">Saúde<span class="text-brand-lime">Real</span></div>
+                        </div>
                     </div>
-                    <div>
-                        <label for="phone" class="block text-sm font-medium text-gray-300 mb-2">Telefone</label>
-                        <input type="tel" id="phone" name="phone" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-brand-tealLight transition" placeholder="+244 ..." />
-                    </div>
+                    <p class="text-white/70 text-sm leading-relaxed">A sua farmácia de confiança na Vila de Cacuaco.</p>
                 </div>
                 <div>
-                    <label for="email" class="block text-sm font-medium text-gray-300 mb-2">E-mail</label>
-                    <input type="email" id="email" name="email" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-brand-tealLight transition" placeholder="seu@email.com" />
+                    <h4 class="font-display font-bold text-white mb-4">Links</h4>
+                    <ul class="space-y-2.5 text-sm">
+                        <li><a href="#home" class="text-white/70 hover:text-brand-lime transition">Início</a></li>
+                        <li><a href="#sobre" class="text-white/70 hover:text-brand-lime transition">Sobre</a></li>
+                        <li><a href="#servicos" class="text-white/70 hover:text-brand-lime transition">Serviços</a></li>
+                        <li><a href="#contacto" class="text-white/70 hover:text-brand-lime transition">Contacto</a></li>
+                    </ul>
                 </div>
                 <div>
-                    <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Mensagem</label>
-                    <textarea id="message" name="message" rows="4" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-brand-tealLight transition resize-none" placeholder="A sua mensagem..."></textarea>
+                    <h4 class="font-display font-bold text-white mb-4">Contacto</h4>
+                    <ul class="space-y-2.5 text-sm">
+                        <li class="text-white/70"><i class="fas fa-location-dot text-brand-lime mr-2"></i> Vila de Cacuaco, Luanda</li>
+                        <li><a href="tel:+244921660561" class="text-white/70 hover:text-brand-lime transition"><i class="fas fa-phone text-brand-lime mr-2"></i> +244 921 660 561</a></li>
+                        <li><a href="mailto:geral@saudereal.ao" class="text-white/70 hover:text-brand-lime transition break-all"><i class="fas fa-envelope text-brand-lime mr-2"></i> geral@saudereal.ao</a></li>
+                    </ul>
                 </div>
-                <button type="submit" class="btn-primary w-full text-white px-8 py-4 rounded-xl font-semibold inline-flex items-center justify-center gap-2 text-base">
-                    <i class="fas fa-paper-plane"></i> Enviar mensagem
-                </button>
-                <div id="formStatus" class="hidden text-center py-3 rounded-xl"></div>
-            </form>
+            </div>
+            <div class="h-px bg-white/10 my-8"></div>
+            <p class="text-center text-sm text-white/60">© <span id="year"></span> <strong class="text-white">Farmácia Saúde Real</strong>. Encomendas via <a href="https://farmaceutika.ao" target="_blank" rel="noopener" class="text-brand-lime hover:underline font-semibold">Farmaceutika</a></p>
         </div>
-    </div>
-</section>
+    </footer>
 
-<!-- ============== FOOTER ============== -->
-<footer class="relative bg-black/40 border-t border-white/10 overflow-hidden">
-    <div class="absolute inset-0 grid-overlay opacity-20"></div>
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div>
-                <div class="flex items-center gap-3 mb-4">
-                    <!-- bg-white substituído por bg-transparent -->
-                    <div class="w-10 h-10 rounded-xl bg-transparent p-1 flex items-center justify-center">
-                        <img src="B571A0C1-6068-461A-9EF2-8500AA607F3F.png" alt="Saúde Real" class="w-full h-full object-contain" />
-                    </div>
-                    <div>
-                        <div class="text-xs text-brand-tealLight font-medium tracking-wider uppercase">Farmácia</div>
-                        <div class="text-lg font-display font-bold text-white leading-none">Saúde<span class="text-brand-cyan">Real</span></div>
-                    </div>
-                </div>
-                <p class="text-gray-400 text-sm">A sua farmácia de confiança na Vila de Cacuaco.</p>
-            </div>
-            <div>
-                <h4 class="font-display font-bold text-white mb-3">Links</h4>
-                <ul class="space-y-2 text-sm">
-                    <li><a href="#home" class="text-gray-400 hover:text-brand-tealLight transition">Início</a></li>
-                    <li><a href="#sobre" class="text-gray-400 hover:text-brand-tealLight transition">Sobre</a></li>
-                    <li><a href="#servicos" class="text-gray-400 hover:text-brand-tealLight transition">Serviços</a></li>
-                    <li><a href="#contacto" class="text-gray-400 hover:text-brand-tealLight transition">Contacto</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-display font-bold text-white mb-3">Contacto</h4>
-                <ul class="space-y-2 text-sm">
-                    <li class="text-gray-400"><i class="fas fa-location-dot text-brand-tealLight mr-2"></i> Vila de Cacuaco, Luanda</li>
-                    <li><a href="tel:+244921660561" class="text-gray-400 hover:text-brand-tealLight transition"><i class="fas fa-phone text-brand-tealLight mr-2"></i> +244 921 660 561</a></li>
-                    <li><a href="mailto:geral@saudereal.ao" class="text-gray-400 hover:text-brand-tealLight transition break-all"><i class="fas fa-envelope text-brand-tealLight mr-2"></i> geral@saudereal.ao</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="divider my-8"></div>
-        <p class="text-center text-sm text-gray-400">© <span id="year"></span> <strong class="text-white">Farmácia Saúde Real</strong>. Encomendas via <a href="https://farmaceutika.ao" target="_blank" rel="noopener" class="text-brand-tealLight hover:underline font-medium">Farmaceutika</a></p>
-    </div>
-</footer>
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/244921660561" target="_blank" rel="noopener" class="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-brand-lime text-brand-ink flex items-center justify-center shadow-2xl transition-transform hover:scale-110" aria-label="Contactar via WhatsApp" style="box-shadow: 0 10px 30px rgba(209, 255, 59, 0.5);">
+        <i class="fab fa-whatsapp text-2xl"></i>
+        <span class="absolute inset-0 rounded-full bg-brand-lime animate-ping opacity-30"></span>
+    </a>
 
-<!-- Floating WhatsApp -->
-<a href="https://wa.me/244921660561" target="_blank" rel="noopener" class="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-brand-teal hover:bg-brand-tealLight text-white flex items-center justify-center shadow-2xl transition-transform hover:scale-110" aria-label="Contactar via WhatsApp" style="box-shadow: 0 0 30px rgba(20, 184, 166, 0.4);">
-    <i class="fab fa-whatsapp text-2xl"></i>
-    <span class="absolute inset-0 rounded-full bg-brand-teal animate-ping opacity-30"></span>
-</a>
+    <!-- ============== JAVASCRIPT ============== -->
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
 
-<!-- ============== JAVASCRIPT ============== -->
-<script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Nav scroll effect
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-        navbar.classList.toggle('nav-scrolled', window.scrollY > 50);
-    });
-
-    // Mobile menu
-    const menuBtn = document.getElementById('menuBtn');
-    const closeBtn = document.getElementById('closeBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const mobileLinks = document.querySelectorAll('.mobile-link');
-
-    menuBtn.addEventListener('click', () => mobileMenu.classList.remove('hidden-menu'));
-    closeBtn.addEventListener('click', () => mobileMenu.classList.add('hidden-menu'));
-    mobileLinks.forEach(link => link.addEventListener('click', () => mobileMenu.classList.add('hidden-menu')));
-
-    // Reveal on scroll
-    const reveals = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-                observer.unobserve(entry.target);
+        // Nav scroll effect (sombra mais forte ao rolar)
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('nav-scrolled-wrapper');
+            } else {
+                navbar.classList.remove('nav-scrolled-wrapper');
             }
         });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-    reveals.forEach(el => observer.observe(el));
 
-    // Contact form
-    const form = document.getElementById('contactForm');
-    const formStatus = document.getElementById('formStatus');
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const data = new FormData(form);
-        const mailBody = encodeURIComponent(
-            `Nome: ${data.get('name')}\nE-mail: ${data.get('email')}\nTelefone: ${data.get('phone') || 'Não fornecido'}\n\nMensagem:\n${data.get('message')}`
-        );
-        const mailto = `mailto:geral@saudereal.ao?subject=${encodeURIComponent('[Site] Contacto')}&body=${mailBody}`;
+        // Mobile menu
+        const menuBtn = document.getElementById('menuBtn');
+        const closeBtn = document.getElementById('closeBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
 
-        formStatus.className = 'text-center py-3 rounded-xl bg-brand-teal/20 border border-brand-teal/40 text-brand-tealLight';
-        formStatus.innerHTML = '<i class="fas fa-check-circle"></i> A abrir o seu e-mail...';
-        formStatus.classList.remove('hidden');
+        menuBtn.addEventListener('click', () => mobileMenu.classList.remove('hidden-menu'));
+        closeBtn.addEventListener('click', () => mobileMenu.classList.add('hidden-menu'));
+        mobileLinks.forEach(link => link.addEventListener('click', () => mobileMenu.classList.add('hidden-menu')));
 
-        setTimeout(() => {
-            window.location.href = mailto;
-            form.reset();
-            setTimeout(() => formStatus.classList.add('hidden'), 5000);
-        }, 600);
-    });
+        // Reveal on scroll
+        const reveals = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+        reveals.forEach(el => observer.observe(el));
 
-    // Smooth scroll offset
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            const target = document.querySelector(targetId);
-            if (target) {
-                e.preventDefault();
-                const top = target.getBoundingClientRect().top + window.pageYOffset - 75;
-                window.scrollTo({ top, behavior: 'smooth' });
-            }
+        // Contact form
+        const form = document.getElementById('contactForm');
+        const formStatus = document.getElementById('formStatus');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const data = new FormData(form);
+            const mailBody = encodeURIComponent(
+                `Nome: ${data.get('name')}\nE-mail: ${data.get('email')}\nTelefone: ${data.get('phone') || 'Não fornecido'}\n\nMensagem:\n${data.get('message')}`
+            );
+            const mailto = `mailto:geral@saudereal.ao?subject=${encodeURIComponent('[Site] Contacto')}&body=${mailBody}`;
+
+            formStatus.className = 'text-center py-3 rounded-xl bg-brand-greenLight border border-brand-green/30 text-brand-green font-semibold';
+            formStatus.innerHTML = '<i class="fas fa-check-circle"></i> A abrir o seu e-mail...';
+            formStatus.classList.remove('hidden');
+
+            setTimeout(() => {
+                window.location.href = mailto;
+                form.reset();
+                setTimeout(() => formStatus.classList.add('hidden'), 5000);
+            }, 600);
         });
-    });
 
-    // Active nav link highlight
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('nav a[href^="#"]');
-    window.addEventListener('scroll', () => {
-        let current = '';
-        sections.forEach(section => {
-            if (window.scrollY >= section.offsetTop - 100) current = section.id;
+        // Smooth scroll offset
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const target = document.querySelector(targetId);
+                if (target) {
+                    e.preventDefault();
+                    const top = target.getBoundingClientRect().top + window.pageYOffset - 90;
+                    window.scrollTo({ top, behavior: 'smooth' });
+                }
+            });
         });
-        navLinks.forEach(link => {
-            link.classList.toggle('text-brand-tealLight', link.getAttribute('href') === '#' + current);
+
+        // Active nav link highlight
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('nav a[href^="#"]');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                if (window.scrollY >= section.offsetTop - 120) current = section.id;
+            });
+            navLinks.forEach(link => {
+                link.classList.toggle('text-brand-green', link.getAttribute('href') === '#' + current);
+                link.classList.toggle('bg-brand-greenLight', link.getAttribute('href') === '#' + current);
+            });
         });
-    });
-</script>
+    </script>
 </body>
 </html>
