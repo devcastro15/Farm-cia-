@@ -27,12 +27,14 @@
                 extend: {
                     colors: {
                         brand: {
-                            navy: '#0a1a3a',
-                            deep: '#0f2557',
-                            blue: '#1e40af',
+                            navy: '#0a192f',
+                            deep: '#112240',
+                            blue: '#1d4ed8',
                             accent: '#2563eb',
-                            green: '#22c55e',
-                            greenDark: '#16a34a',
+                            teal: '#0f766e',
+                            tealLight: '#14b8a6',
+                            cyan: '#0891b2',
+                            emerald: '#047857',
                         }
                     },
                     fontFamily: {
@@ -70,61 +72,61 @@
         }
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0a1a3a;
+            background-color: #0a192f;
             color: #e6edf7;
             overflow-x: hidden;
         }
 
         .hero-bg {
             background:
-                radial-gradient(ellipse at 20% 30%, rgba(34, 197, 94, 0.12) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 70%, rgba(37, 99, 235, 0.2) 0%, transparent 50%),
-                radial-gradient(ellipse at 50% 50%, rgba(15, 37, 87, 0.5) 0%, transparent 70%),
-                linear-gradient(135deg, #050d20 0%, #0a1a3a 50%, #0f2557 100%);
+                radial-gradient(ellipse at 20% 30%, rgba(20, 184, 166, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 70%, rgba(8, 145, 178, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 50%, rgba(17, 34, 64, 0.5) 0%, transparent 70%),
+                linear-gradient(135deg, #051024 0%, #0a192f 50%, #112240 100%);
         }
 
         .grid-overlay {
             background-image:
-                linear-gradient(rgba(37, 99, 235, 0.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(37, 99, 235, 0.05) 1px, transparent 1px);
+                linear-gradient(rgba(8, 145, 178, 0.06) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(8, 145, 178, 0.06) 1px, transparent 1px);
             background-size: 50px 50px;
         }
 
-        .glow-green {
-            box-shadow: 0 0 40px rgba(34, 197, 94, 0.35), 0 0 80px rgba(34, 197, 94, 0.15);
+        .glow-teal {
+            box-shadow: 0 0 40px rgba(20, 184, 166, 0.3), 0 0 80px rgba(20, 184, 166, 0.12);
         }
-        .glow-blue {
-            box-shadow: 0 0 40px rgba(37, 99, 235, 0.35), 0 0 80px rgba(37, 99, 235, 0.15);
+        .glow-cyan {
+            box-shadow: 0 0 40px rgba(8, 145, 178, 0.3), 0 0 80px rgba(8, 145, 178, 0.12);
         }
 
         .glass {
-            background: rgba(15, 37, 87, 0.4);
+            background: rgba(17, 34, 64, 0.45);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.07);
         }
         .glass-strong {
-            background: rgba(10, 26, 58, 0.85);
+            background: rgba(10, 25, 47, 0.85);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .gradient-text {
-            background: linear-gradient(135deg, #22c55e 0%, #3b82f6 100%);
+            background: linear-gradient(135deg, #14b8a6 0%, #0891b2 100%);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+            background: linear-gradient(135deg, #0f766e 0%, #0e7490 100%);
             transition: all 0.3s ease;
-            box-shadow: 0 4px 20px rgba(34, 197, 94, 0.4);
+            box-shadow: 0 4px 20px rgba(15, 118, 110, 0.35);
         }
         .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(34, 197, 94, 0.6);
+            box-shadow: 0 8px 30px rgba(15, 118, 110, 0.55);
         }
 
         .card-hover {
@@ -132,20 +134,20 @@
         }
         .card-hover:hover {
             transform: translateY(-8px);
-            border-color: rgba(34, 197, 94, 0.35);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35), 0 0 25px rgba(34, 197, 94, 0.1);
+            border-color: rgba(20, 184, 166, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35), 0 0 25px rgba(20, 184, 166, 0.08);
         }
 
         .shape {
             position: absolute;
             border-radius: 50%;
             filter: blur(60px);
-            opacity: 0.35;
+            opacity: 0.3;
             z-index: 0;
         }
 
         .nav-scrolled {
-            background: rgba(10, 26, 58, 0.95) !important;
+            background: rgba(10, 25, 47, 0.95) !important;
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
@@ -155,10 +157,10 @@
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #0a1a3a;
+            background: #0a192f;
         }
         ::-webkit-scrollbar-thumb {
-            background: linear-gradient(135deg, #22c55e, #2563eb);
+            background: linear-gradient(135deg, #0f766e, #0891b2);
             border-radius: 10px;
         }
 
@@ -180,7 +182,7 @@
             position: absolute;
             inset: -4px;
             border-radius: 50%;
-            background: #22c55e;
+            background: #14b8a6;
             opacity: 0.5;
             animation: pulseDot 2s ease-out infinite;
         }
@@ -206,7 +208,7 @@
 
         .divider {
             height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(34, 197, 94, 0.5), rgba(37, 99, 235, 0.5), transparent);
+            background: linear-gradient(90deg, transparent, rgba(20, 184, 166, 0.5), rgba(8, 145, 178, 0.5), transparent);
         }
     </style>
 </head>
@@ -221,17 +223,17 @@
                         <img src="B571A0C1-6068-461A-9EF2-8500AA607F3F.png" alt="Saúde Real" class="w-full h-full object-contain" />
                     </div>
                     <div class="hidden sm:block">
-                        <div class="text-xs text-brand-green font-medium tracking-wider uppercase">Farmácia</div>
-                        <div class="text-lg font-display font-bold text-white leading-none">Saúde<span class="text-brand-accent">Real</span></div>
+                        <div class="text-xs text-brand-tealLight font-medium tracking-wider uppercase">Farmácia</div>
+                        <div class="text-lg font-display font-bold text-white leading-none">Saúde<span class="text-brand-cyan">Real</span></div>
                     </div>
                 </a>
 
                 <ul class="hidden lg:flex items-center gap-1">
-                    <li><a href="#home" class="px-4 py-2 text-sm font-medium text-gray-200 hover:text-brand-green transition-colors rounded-lg hover:bg-white/5">Início</a></li>
-                    <li><a href="#sobre" class="px-4 py-2 text-sm font-medium text-gray-200 hover:text-brand-green transition-colors rounded-lg hover:bg-white/5">Sobre</a></li>
-                    <li><a href="#servicos" class="px-4 py-2 text-sm font-medium text-gray-200 hover:text-brand-green transition-colors rounded-lg hover:bg-white/5">Serviços</a></li>
-                    <li><a href="#localizacao" class="px-4 py-2 text-sm font-medium text-gray-200 hover:text-brand-green transition-colors rounded-lg hover:bg-white/5">Localização</a></li>
-                    <li><a href="#contacto" class="px-4 py-2 text-sm font-medium text-gray-200 hover:text-brand-green transition-colors rounded-lg hover:bg-white/5">Contacto</a></li>
+                    <li><a href="#home" class="px-4 py-2 text-sm font-medium text-gray-200 hover:text-brand-tealLight transition-colors rounded-lg hover:bg-white/5">Início</a></li>
+                    <li><a href="#sobre" class="px-4 py-2 text-sm font-medium text-gray-200 hover:text-brand-tealLight transition-colors rounded-lg hover:bg-white/5">Sobre</a></li>
+                    <li><a href="#servicos" class="px-4 py-2 text-sm font-medium text-gray-200 hover:text-brand-tealLight transition-colors rounded-lg hover:bg-white/5">Serviços</a></li>
+                    <li><a href="#localizacao" class="px-4 py-2 text-sm font-medium text-gray-200 hover:text-brand-tealLight transition-colors rounded-lg hover:bg-white/5">Localização</a></li>
+                    <li><a href="#contacto" class="px-4 py-2 text-sm font-medium text-gray-200 hover:text-brand-tealLight transition-colors rounded-lg hover:bg-white/5">Contacto</a></li>
                 </ul>
 
                 <a href="https://farmaceutika.ao" target="_blank" rel="noopener" class="hidden lg:inline-flex btn-primary text-white px-5 py-2.5 rounded-lg font-semibold text-sm items-center gap-2">
@@ -252,22 +254,22 @@
                 </button>
             </div>
             <ul class="space-y-2">
-                <li><a href="#home" class="mobile-link block px-4 py-3 text-gray-200 hover:text-brand-green hover:bg-white/5 rounded-lg transition">Início</a></li>
-                <li><a href="#sobre" class="mobile-link block px-4 py-3 text-gray-200 hover:text-brand-green hover:bg-white/5 rounded-lg transition">Sobre</a></li>
-                <li><a href="#servicos" class="mobile-link block px-4 py-3 text-gray-200 hover:text-brand-green hover:bg-white/5 rounded-lg transition">Serviços</a></li>
-                <li><a href="#localizacao" class="mobile-link block px-4 py-3 text-gray-200 hover:text-brand-green hover:bg-white/5 rounded-lg transition">Localização</a></li>
-                <li><a href="#contacto" class="mobile-link block px-4 py-3 text-gray-200 hover:text-brand-green hover:bg-white/5 rounded-lg transition">Contacto</a></li>
+                <li><a href="#home" class="mobile-link block px-4 py-3 text-gray-200 hover:text-brand-tealLight hover:bg-white/5 rounded-lg transition">Início</a></li>
+                <li><a href="#sobre" class="mobile-link block px-4 py-3 text-gray-200 hover:text-brand-tealLight hover:bg-white/5 rounded-lg transition">Sobre</a></li>
+                <li><a href="#servicos" class="mobile-link block px-4 py-3 text-gray-200 hover:text-brand-tealLight hover:bg-white/5 rounded-lg transition">Serviços</a></li>
+                <li><a href="#localizacao" class="mobile-link block px-4 py-3 text-gray-200 hover:text-brand-tealLight hover:bg-white/5 rounded-lg transition">Localização</a></li>
+                <li><a href="#contacto" class="mobile-link block px-4 py-3 text-gray-200 hover:text-brand-tealLight hover:bg-white/5 rounded-lg transition">Contacto</a></li>
             </ul>
             <a href="https://farmaceutika.ao" target="_blank" rel="noopener" class="btn-primary mt-8 text-white px-5 py-3 rounded-lg font-semibold text-sm flex items-center justify-center gap-2">
                 <i class="fas fa-shopping-bag"></i> Encomendar Online
             </a>
             <div class="mt-8 pt-8 border-t border-white/10">
                 <p class="text-xs text-gray-400 uppercase tracking-wider mb-3">Contacto rápido</p>
-                <a href="tel:+244921660561" class="flex items-center gap-3 text-gray-300 hover:text-brand-green mb-3">
-                    <i class="fas fa-phone text-brand-green"></i> +244 921 660 561
+                <a href="tel:+244921660561" class="flex items-center gap-3 text-gray-300 hover:text-brand-tealLight mb-3">
+                    <i class="fas fa-phone text-brand-tealLight"></i> +244 921 660 561
                 </a>
-                <a href="mailto:geral@saudereal.ao" class="flex items-center gap-3 text-gray-300 hover:text-brand-green">
-                    <i class="fas fa-envelope text-brand-green"></i> geral@saudereal.ao
+                <a href="mailto:geral@saudereal.ao" class="flex items-center gap-3 text-gray-300 hover:text-brand-tealLight">
+                    <i class="fas fa-envelope text-brand-tealLight"></i> geral@saudereal.ao
                 </a>
             </div>
         </div>
@@ -276,14 +278,14 @@
     <!-- ============== HERO ============== -->
     <section id="home" class="relative min-h-screen hero-bg overflow-hidden flex items-center pt-24 pb-16">
         <div class="absolute inset-0 grid-overlay opacity-50"></div>
-        <div class="shape bg-brand-green" style="width: 350px; height: 350px; top: -80px; left: -80px;"></div>
-        <div class="shape bg-brand-accent" style="width: 400px; height: 400px; bottom: -120px; right: -120px; animation-delay: 2s;"></div>
+        <div class="shape bg-brand-tealLight" style="width: 350px; height: 350px; top: -80px; left: -80px;"></div>
+        <div class="shape bg-brand-cyan" style="width: 400px; height: 400px; bottom: -120px; right: -120px; animation-delay: 2s;"></div>
 
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <div class="text-center lg:text-left">
                     <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-6 animate-fade-in">
-                        <span class="pulse-dot w-2 h-2 bg-brand-green rounded-full"></span>
+                        <span class="pulse-dot w-2 h-2 bg-brand-tealLight rounded-full"></span>
                         <span class="text-sm text-gray-200 font-medium">Vila de Cacuaco, Luanda</span>
                     </div>
 
@@ -308,13 +310,13 @@
 
                 <div class="relative flex justify-center lg:justify-end animate-fade-in" style="animation-delay: 0.3s;">
                     <div class="relative">
-                        <div class="absolute inset-0 rounded-full border border-brand-green/20 animate-pulse-slow" style="transform: scale(1.3);"></div>
-                        <div class="absolute inset-0 rounded-full border border-brand-accent/20 animate-pulse-slow" style="transform: scale(1.5); animation-delay: 1s;"></div>
-                        <div class="relative glass rounded-3xl p-8 sm:p-10 glow-green animate-float">
+                        <div class="absolute inset-0 rounded-full border border-brand-tealLight/20 animate-pulse-slow" style="transform: scale(1.3);"></div>
+                        <div class="absolute inset-0 rounded-full border border-brand-cyan/20 animate-pulse-slow" style="transform: scale(1.5); animation-delay: 1s;"></div>
+                        <div class="relative glass rounded-3xl p-8 sm:p-10 glow-teal animate-float">
                             <div class="bg-white rounded-2xl p-6 shadow-2xl">
                                 <img src="B571A0C1-6068-461A-9EF2-8500AA607F3F.png" alt="Farmácia Saúde Real" class="w-full h-auto max-w-xs mx-auto" />
                             </div>
-                            <div class="absolute -top-3 -right-3 bg-brand-green text-white px-3 py-1.5 rounded-full text-xs font-bold shadow-lg flex items-center gap-1.5">
+                            <div class="absolute -top-3 -right-3 bg-brand-teal text-white px-3 py-1.5 rounded-full text-xs font-bold shadow-lg flex items-center gap-1.5">
                                 <i class="fas fa-check-circle"></i> Certificada
                             </div>
                         </div>
@@ -331,12 +333,12 @@
     <!-- ============== SOBRE ============== -->
     <section id="sobre" class="relative py-20 bg-brand-navy overflow-hidden">
         <div class="absolute inset-0 grid-overlay opacity-30"></div>
-        <div class="shape bg-brand-green" style="width: 250px; height: 250px; top: 15%; right: -80px;"></div>
+        <div class="shape bg-brand-tealLight" style="width: 250px; height: 250px; top: 15%; right: -80px;"></div>
 
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <div class="reveal">
-                    <span class="text-brand-green font-semibold text-sm uppercase tracking-widest">Sobre Nós</span>
+                    <span class="text-brand-tealLight font-semibold text-sm uppercase tracking-widest">Sobre Nós</span>
                     <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mt-3 mb-5 leading-tight">
                         Mais do que uma farmácia, um <span class="gradient-text">parceiro de saúde</span>.
                     </h2>
@@ -348,7 +350,7 @@
 
                 <div class="grid gap-4 reveal">
                     <div class="glass rounded-2xl p-5 card-hover flex items-start gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-brand-green to-brand-greenDark flex items-center justify-center flex-shrink-0 glow-green">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-brand-teal to-brand-tealLight flex items-center justify-center flex-shrink-0 glow-teal">
                             <i class="fas fa-user-md text-white"></i>
                         </div>
                         <div>
@@ -357,7 +359,7 @@
                         </div>
                     </div>
                     <div class="glass rounded-2xl p-5 card-hover flex items-start gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-brand-accent to-brand-blue flex items-center justify-center flex-shrink-0 glow-blue">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-brand-cyan to-brand-blue flex items-center justify-center flex-shrink-0 glow-cyan">
                             <i class="fas fa-pills text-white"></i>
                         </div>
                         <div>
@@ -366,7 +368,7 @@
                         </div>
                     </div>
                     <div class="glass rounded-2xl p-5 card-hover flex items-start gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-brand-green to-brand-accent flex items-center justify-center flex-shrink-0">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-brand-teal to-brand-cyan flex items-center justify-center flex-shrink-0">
                             <i class="fas fa-heart-pulse text-white"></i>
                         </div>
                         <div>
@@ -382,11 +384,11 @@
     <!-- ============== SERVIÇOS ============== -->
     <section id="servicos" class="relative py-20 bg-gradient-to-b from-brand-navy to-brand-deep overflow-hidden">
         <div class="absolute inset-0 grid-overlay opacity-30"></div>
-        <div class="shape bg-brand-accent" style="width: 300px; height: 300px; top: -80px; left: -80px;"></div>
+        <div class="shape bg-brand-cyan" style="width: 300px; height: 300px; top: -80px; left: -80px;"></div>
 
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-14 reveal">
-                <span class="text-brand-green font-semibold text-sm uppercase tracking-widest">Serviços</span>
+                <span class="text-brand-tealLight font-semibold text-sm uppercase tracking-widest">Serviços</span>
                 <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mt-3 mb-3">
                     Cuidamos de <span class="gradient-text">toda a família</span>
                 </h2>
@@ -394,7 +396,7 @@
 
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
                 <div class="glass rounded-2xl p-7 card-hover reveal text-center">
-                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-green to-brand-greenDark flex items-center justify-center mb-4 mx-auto glow-green">
+                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-teal to-brand-tealLight flex items-center justify-center mb-4 mx-auto glow-teal">
                         <i class="fas fa-prescription-bottle-medical text-white text-xl"></i>
                     </div>
                     <h3 class="font-display text-lg font-bold text-white mb-2">Medicamentos</h3>
@@ -402,7 +404,7 @@
                 </div>
 
                 <div class="glass rounded-2xl p-7 card-hover reveal text-center">
-                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-accent to-brand-blue flex items-center justify-center mb-4 mx-auto glow-blue">
+                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-cyan to-brand-blue flex items-center justify-center mb-4 mx-auto glow-cyan">
                         <i class="fas fa-stethoscope text-white text-xl"></i>
                     </div>
                     <h3 class="font-display text-lg font-bold text-white mb-2">Aconselhamento</h3>
@@ -410,7 +412,7 @@
                 </div>
 
                 <div class="glass rounded-2xl p-7 card-hover reveal text-center">
-                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-green to-brand-accent flex items-center justify-center mb-4 mx-auto">
+                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-teal to-brand-cyan flex items-center justify-center mb-4 mx-auto">
                         <i class="fas fa-heart-pulse text-white text-xl"></i>
                     </div>
                     <h3 class="font-display text-lg font-bold text-white mb-2">Medição de Tensão</h3>
@@ -418,7 +420,7 @@
                 </div>
 
                 <div class="glass rounded-2xl p-7 card-hover reveal text-center">
-                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-accent to-brand-green flex items-center justify-center mb-4 mx-auto">
+                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-cyan to-brand-teal flex items-center justify-center mb-4 mx-auto">
                         <i class="fas fa-droplet text-white text-xl"></i>
                     </div>
                     <h3 class="font-display text-lg font-bold text-white mb-2">Glicemia</h3>
@@ -426,7 +428,7 @@
                 </div>
 
                 <div class="glass rounded-2xl p-7 card-hover reveal text-center">
-                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-green to-brand-blue flex items-center justify-center mb-4 mx-auto">
+                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-teal to-brand-blue flex items-center justify-center mb-4 mx-auto">
                         <i class="fas fa-baby text-white text-xl"></i>
                     </div>
                     <h3 class="font-display text-lg font-bold text-white mb-2">Produtos Infantis</h3>
@@ -434,7 +436,7 @@
                 </div>
 
                 <div class="glass rounded-2xl p-7 card-hover reveal text-center">
-                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-accent to-brand-greenDark flex items-center justify-center mb-4 mx-auto">
+                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-cyan to-brand-tealLight flex items-center justify-center mb-4 mx-auto">
                         <i class="fas fa-spa text-white text-xl"></i>
                     </div>
                     <h3 class="font-display text-lg font-bold text-white mb-2">Dermocosmética</h3>
@@ -447,17 +449,17 @@
     <!-- ============== FARMACEUTIKA CTA ============== -->
     <section class="relative py-20 bg-brand-deep overflow-hidden">
         <div class="absolute inset-0 grid-overlay opacity-40"></div>
-        <div class="shape bg-brand-green" style="width: 350px; height: 350px; bottom: -150px; left: 25%;"></div>
+        <div class="shape bg-brand-tealLight" style="width: 350px; height: 350px; bottom: -150px; left: 25%;"></div>
 
         <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="glass-strong rounded-3xl p-8 sm:p-12 reveal relative overflow-hidden text-center">
-                <div class="absolute top-0 right-0 w-72 h-72 bg-brand-green/8 rounded-full blur-3xl"></div>
-                <div class="absolute bottom-0 left-0 w-72 h-72 bg-brand-accent/8 rounded-full blur-3xl"></div>
+                <div class="absolute top-0 right-0 w-72 h-72 bg-brand-teal/10 rounded-full blur-3xl"></div>
+                <div class="absolute bottom-0 left-0 w-72 h-72 bg-brand-cyan/10 rounded-full blur-3xl"></div>
 
                 <div class="relative">
-                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-green/20 border border-brand-green/30 mb-6">
-                        <i class="fas fa-bolt text-brand-green"></i>
-                        <span class="text-sm text-brand-green font-semibold">Parceiro Oficial</span>
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-teal/20 border border-brand-teal/30 mb-6">
+                        <i class="fas fa-bolt text-brand-tealLight"></i>
+                        <span class="text-sm text-brand-tealLight font-semibold">Parceiro Oficial</span>
                     </div>
                     <h3 class="font-display text-3xl sm:text-4xl font-bold text-white mb-4">
                         Encomende na <span class="gradient-text">Farmaceutika</span>
@@ -479,7 +481,7 @@
 
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 reveal">
-                <span class="text-brand-green font-semibold text-sm uppercase tracking-widest">Onde Estamos</span>
+                <span class="text-brand-tealLight font-semibold text-sm uppercase tracking-widest">Onde Estamos</span>
                 <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mt-3 mb-3">
                     Vila de <span class="gradient-text">Cacuaco</span>
                 </h2>
@@ -488,7 +490,7 @@
 
             <div class="grid lg:grid-cols-3 gap-5">
                 <div class="glass rounded-2xl p-6 card-hover reveal flex items-start gap-4">
-                    <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-brand-green to-brand-greenDark flex items-center justify-center flex-shrink-0">
+                    <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-brand-teal to-brand-tealLight flex items-center justify-center flex-shrink-0">
                         <i class="fas fa-location-dot text-white"></i>
                     </div>
                     <div>
@@ -498,7 +500,7 @@
                 </div>
 
                 <div class="glass rounded-2xl p-6 card-hover reveal flex items-start gap-4">
-                    <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-brand-accent to-brand-blue flex items-center justify-center flex-shrink-0">
+                    <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-brand-cyan to-brand-blue flex items-center justify-center flex-shrink-0">
                         <i class="fas fa-clock text-white"></i>
                     </div>
                     <div>
@@ -508,13 +510,13 @@
                 </div>
 
                 <div class="glass rounded-2xl p-6 card-hover reveal flex items-start gap-4">
-                    <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-brand-green to-brand-accent flex items-center justify-center flex-shrink-0">
+                    <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-brand-teal to-brand-cyan flex items-center justify-center flex-shrink-0">
                         <i class="fas fa-phone text-white"></i>
                     </div>
                     <div>
                         <h4 class="font-display font-bold text-white mb-1">Contacto</h4>
-                        <a href="tel:+244921660561" class="text-gray-300 hover:text-brand-green text-sm block">+244 921 660 561</a>
-                        <a href="mailto:geral@saudereal.ao" class="text-gray-300 hover:text-brand-green text-sm block">geral@saudereal.ao</a>
+                        <a href="tel:+244921660561" class="text-gray-300 hover:text-brand-tealLight text-sm block">+244 921 660 561</a>
+                        <a href="mailto:geral@saudereal.ao" class="text-gray-300 hover:text-brand-tealLight text-sm block">geral@saudereal.ao</a>
                     </div>
                 </div>
             </div>
@@ -536,11 +538,11 @@
 <!-- ============== CONTACTO ============== -->
 <section id="contacto" class="relative py-20 bg-gradient-to-b from-brand-navy to-brand-deep overflow-hidden">
     <div class="absolute inset-0 grid-overlay opacity-30"></div>
-    <div class="shape bg-brand-accent" style="width: 300px; height: 300px; top: 15%; right: -100px;"></div>
+    <div class="shape bg-brand-cyan" style="width: 300px; height: 300px; top: 15%; right: -100px;"></div>
 
     <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12 reveal">
-            <span class="text-brand-green font-semibold text-sm uppercase tracking-widest">Fale Connosco</span>
+            <span class="text-brand-tealLight font-semibold text-sm uppercase tracking-widest">Fale Connosco</span>
             <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mt-3 mb-3">
                 Estamos aqui para <span class="gradient-text">si</span>
             </h2>
@@ -552,20 +554,20 @@
                 <div class="grid sm:grid-cols-2 gap-5">
                     <div>
                         <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Nome completo</label>
-                        <input type="text" id="name" name="name" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-brand-green transition" placeholder="O seu nome" />
+                        <input type="text" id="name" name="name" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-brand-tealLight transition" placeholder="O seu nome" />
                     </div>
                     <div>
                         <label for="phone" class="block text-sm font-medium text-gray-300 mb-2">Telefone</label>
-                        <input type="tel" id="phone" name="phone" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-brand-green transition" placeholder="+244 ..." />
+                        <input type="tel" id="phone" name="phone" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-brand-tealLight transition" placeholder="+244 ..." />
                     </div>
                 </div>
                 <div>
                     <label for="email" class="block text-sm font-medium text-gray-300 mb-2">E-mail</label>
-                    <input type="email" id="email" name="email" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-brand-green transition" placeholder="seu@email.com" />
+                    <input type="email" id="email" name="email" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-brand-tealLight transition" placeholder="seu@email.com" />
                 </div>
                 <div>
                     <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Mensagem</label>
-                    <textarea id="message" name="message" rows="4" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-brand-green transition resize-none" placeholder="A sua mensagem..."></textarea>
+                    <textarea id="message" name="message" rows="4" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-brand-tealLight transition resize-none" placeholder="A sua mensagem..."></textarea>
                 </div>
                 <button type="submit" class="btn-primary w-full text-white px-8 py-4 rounded-xl font-semibold inline-flex items-center justify-center gap-2 text-base">
                     <i class="fas fa-paper-plane"></i> Enviar mensagem
@@ -587,8 +589,8 @@
                         <img src="B571A0C1-6068-461A-9EF2-8500AA607F3F.png" alt="Saúde Real" class="w-full h-full object-contain" />
                     </div>
                     <div>
-                        <div class="text-xs text-brand-green font-medium tracking-wider uppercase">Farmácia</div>
-                        <div class="text-lg font-display font-bold text-white leading-none">Saúde<span class="text-brand-accent">Real</span></div>
+                        <div class="text-xs text-brand-tealLight font-medium tracking-wider uppercase">Farmácia</div>
+                        <div class="text-lg font-display font-bold text-white leading-none">Saúde<span class="text-brand-cyan">Real</span></div>
                     </div>
                 </div>
                 <p class="text-gray-400 text-sm">A sua farmácia de confiança na Vila de Cacuaco.</p>
@@ -596,30 +598,30 @@
             <div>
                 <h4 class="font-display font-bold text-white mb-3">Links</h4>
                 <ul class="space-y-2 text-sm">
-                    <li><a href="#home" class="text-gray-400 hover:text-brand-green transition">Início</a></li>
-                    <li><a href="#sobre" class="text-gray-400 hover:text-brand-green transition">Sobre</a></li>
-                    <li><a href="#servicos" class="text-gray-400 hover:text-brand-green transition">Serviços</a></li>
-                    <li><a href="#contacto" class="text-gray-400 hover:text-brand-green transition">Contacto</a></li>
+                    <li><a href="#home" class="text-gray-400 hover:text-brand-tealLight transition">Início</a></li>
+                    <li><a href="#sobre" class="text-gray-400 hover:text-brand-tealLight transition">Sobre</a></li>
+                    <li><a href="#servicos" class="text-gray-400 hover:text-brand-tealLight transition">Serviços</a></li>
+                    <li><a href="#contacto" class="text-gray-400 hover:text-brand-tealLight transition">Contacto</a></li>
                 </ul>
             </div>
             <div>
                 <h4 class="font-display font-bold text-white mb-3">Contacto</h4>
                 <ul class="space-y-2 text-sm">
-                    <li class="text-gray-400"><i class="fas fa-location-dot text-brand-green mr-2"></i> Vila de Cacuaco, Luanda</li>
-                    <li><a href="tel:+244921660561" class="text-gray-400 hover:text-brand-green transition"><i class="fas fa-phone text-brand-green mr-2"></i> +244 921 660 561</a></li>
-                    <li><a href="mailto:geral@saudereal.ao" class="text-gray-400 hover:text-brand-green transition break-all"><i class="fas fa-envelope text-brand-green mr-2"></i> geral@saudereal.ao</a></li>
+                    <li class="text-gray-400"><i class="fas fa-location-dot text-brand-tealLight mr-2"></i> Vila de Cacuaco, Luanda</li>
+                    <li><a href="tel:+244921660561" class="text-gray-400 hover:text-brand-tealLight transition"><i class="fas fa-phone text-brand-tealLight mr-2"></i> +244 921 660 561</a></li>
+                    <li><a href="mailto:geral@saudereal.ao" class="text-gray-400 hover:text-brand-tealLight transition break-all"><i class="fas fa-envelope text-brand-tealLight mr-2"></i> geral@saudereal.ao</a></li>
                 </ul>
             </div>
         </div>
         <div class="divider my-8"></div>
-        <p class="text-center text-sm text-gray-400">© <span id="year"></span> <strong class="text-white">Farmácia Saúde Real</strong>. Encomendas via <a href="https://farmaceutika.ao" target="_blank" rel="noopener" class="text-brand-green hover:underline font-medium">Farmaceutika</a></p>
+        <p class="text-center text-sm text-gray-400">© <span id="year"></span> <strong class="text-white">Farmácia Saúde Real</strong>. Encomendas via <a href="https://farmaceutika.ao" target="_blank" rel="noopener" class="text-brand-tealLight hover:underline font-medium">Farmaceutika</a></p>
     </div>
 </footer>
 
 <!-- Floating WhatsApp -->
-<a href="https://wa.me/244921660561" target="_blank" rel="noopener" class="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-green-500 hover:bg-green-600 text-white flex items-center justify-center shadow-2xl transition-transform hover:scale-110" aria-label="Contactar via WhatsApp" style="box-shadow: 0 0 30px rgba(34, 197, 94, 0.5);">
+<a href="https://wa.me/244921660561" target="_blank" rel="noopener" class="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-brand-teal hover:bg-brand-tealLight text-white flex items-center justify-center shadow-2xl transition-transform hover:scale-110" aria-label="Contactar via WhatsApp" style="box-shadow: 0 0 30px rgba(20, 184, 166, 0.4);">
     <i class="fab fa-whatsapp text-2xl"></i>
-    <span class="absolute inset-0 rounded-full bg-green-500 animate-ping opacity-30"></span>
+    <span class="absolute inset-0 rounded-full bg-brand-teal animate-ping opacity-30"></span>
 </a>
 
 <!-- ============== JAVASCRIPT ============== -->
@@ -665,7 +667,7 @@
         );
         const mailto = `mailto:geral@saudereal.ao?subject=${encodeURIComponent('[Site] Contacto')}&body=${mailBody}`;
 
-        formStatus.className = 'text-center py-3 rounded-xl bg-brand-green/20 border border-brand-green/40 text-brand-green';
+        formStatus.className = 'text-center py-3 rounded-xl bg-brand-teal/20 border border-brand-teal/40 text-brand-tealLight';
         formStatus.innerHTML = '<i class="fas fa-check-circle"></i> A abrir o seu e-mail...';
         formStatus.classList.remove('hidden');
 
@@ -699,7 +701,7 @@
             if (window.scrollY >= section.offsetTop - 100) current = section.id;
         });
         navLinks.forEach(link => {
-            link.classList.toggle('text-brand-green', link.getAttribute('href') === '#' + current);
+            link.classList.toggle('text-brand-tealLight', link.getAttribute('href') === '#' + current);
         });
     });
 </script>
